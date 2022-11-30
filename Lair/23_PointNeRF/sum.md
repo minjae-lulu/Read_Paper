@@ -14,7 +14,6 @@
 -> 조건 2 : multiview로 생성해낸 이미지 < nerf로 그시점의 cop에서 본 이미지가 화질이나 정확도가 더 좋아야함
 
 
-
 - 내가 해야할것! multi view를 생성하는 알고리즘을 찾기! 아니면  panorama논문 (Shuran song 저자/ panoramic view sythesys)인것임
 
 - 추가 idea 주신것, 실제 받은 input 한장은 진짜 real 이고, multiview로 생성해낸 이미지들은 부정확하다. 그렇기때문에 nerf를 학습할때 real image에 가중치를 더 두는 것! 
