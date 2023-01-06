@@ -1,0 +1,39 @@
+Summary:  
+The paper presents automatic dataset generation for 3D object pose
+estimators for autonomous driving system. Overall, the proposed
+approach is simple and interesting, but it seems that the experimental
+results do not adequately demonstrate the effectiveness on the
+addressed issue of dataset scalability. The reviewer suggest that the
+authors should clarify the technical contributions of the prposed
+method and consider corresponding experiments and evaluations.
+
+Major comments:
+The main interest of the paper seems to be the scale of the training
+dataset in self-annotation. The author carefully describes the
+challenges in self-annotation in the first half of Section III, but
+there are some insufficinecy for the presentation of solution to these
+challenges nor the experimental results. 
+
+The authors are evaluating accuracy with respect to depth and rotation
+of the detected objects, but it is difficult to determine if the
+degradeation of the accuracy arises from the insufficience of the
+annotation of the dataset. Moreover, this approach is supposed to cause
+a reduction in recall rate because first prediction is conducted with
+high confidence threshold, but the authors make no discussion of this.
+As a result, the proposed method seems to address the fine-tuning
+problem, not dataset scalability.
+
+The reviewer hope that a more experiments and detailed evaluation in
+terms of dataset scalabilities will clarify the contributions of the
+proposed method
+
+On the other hand, considering this approach as a method to generate
+dataset for improving accuracy through fine-tuning, it succeeds in
+creating a highly accurate data set by projecting the results of highly
+accurate object recognition onto a global map and associating them with
+labels. It was thought that a method of creating a high-precision
+dataset for 3D pose estimation, rather than scaling the dataset, would
+reveal more about the contributions.
+
+Minor comments:
+Fig. 1 is not mentioned in the text.

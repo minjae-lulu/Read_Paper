@@ -1,0 +1,58 @@
+Summary : 
+*  The author proposes to exploit the temporal information to better
+distill the 3D knowledge. The distillation is achieved by optimizing
+the global map of object detection landmarks similar to the pose graph
+slam. The method is validated on the KITTI dataset using anchor
+distance metrics.
+
+Presentation:
+*  Fig2 “the depth failure” is not clear. the author could show the
+depth map along the images.
+*  I could not see the benefits of the reasoning behind eq(2). The
+author also has stated Eq(3) is no different from eq(1).
+
+
+Strengths:
+*  The proposed method is interesting, simple and well-motivated. By
+constructing a global landmark map similar to SLAM methods, the
+self-annotation could be corrected and learning based on this new
+self-annotated dataset is no longer bounded by the teacher network.
+
+*  The experiments are reproducible as the authors have specified
+the dataset splits, the newtork, the optimization and data association
+assumptions.
+
+Concerns:
+*  While the baseline model is bounded by the original annotated
+dataset, the proposed method is bounded by more challenging problems
+such as moving objects, pose drifts, occlusion handling, landmark
+associations which explains the minor improvements.
+
+*  As several detections were accumulated for a single image, the
+long distance objects are expected to have better performances, However
+the results reported in table III shows that the performances are
+slightly inferior than the baseline. The authors explain that this is
+due to the elimination of these objects in the self-annotated dataset.
+From what I understand the global map contains only static objects ( as
+stated in C. Global Map Building).  Does this mean that the proposed
+method also eliminates moving objects and overlapping objects for
+better data association. and how the method handles data association
+and object pose in these challenging situations ?
+
+*  The method is proposed to improve the 3D object annotation, however
+the evaluation was performed only on the depth anchor of the objects
+despite having an 3D and 2D annotation ground truth for KITTI dataset.
+Fig2 show only the qualitative performances obtained by optimizing the
+map. As the hand-annotated 2D and 3D ground truth are available for
+KITTI dataset, It will be very beneficial for completeness and clarity
+of the paper to consider the facto metrics such as AP of the annotation
+along the anchor distance.
+
+Conclusion :
+*  Although the method is very interesting as the student network is
+not bounded by the teacher. The performances are now bounded by the
+optimization of the global landmark and its simplification assumptions.
+As a result the reported performances show only minor improvements. I
+consider the paper for a revision by addressing better the optimization
+challenges and their effects and evaluating the obtained annotations on
+the de facto detection metrics such as mAP. 
